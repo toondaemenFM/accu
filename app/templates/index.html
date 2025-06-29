@@ -1,0 +1,40 @@
+<!-- Copyright (c) 2025 Flanders Make vzw
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCU</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="../static/styles/styles.css">
+    <script defer src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+</head>
+<body>
+    <div class="background"></div>
+    <button class="fullscreen-button" style = "background-image: url('static/images/btn_fullscreen.png');" onclick="buttonFullscreenClicked()"></button>
+    <button class="play-button" style = "background-image: url('static/images/btn_play.png');" onclick="buttonPlayClicked()"></button>
+    <div class="input-container" id="input-container">
+        <input id="text-input" type="text-input" placeholder="" />
+    </div>
+    <div class="retry-container" id="retry-container" style="display: none;">
+            <button id="retry-button" class="retry-button">OPNIEUW</button>
+    </div>
+    <audio id="sound-green" src="/static/sounds/green.mp3" preload="auto"></audio>
+    <audio id="sound-red" src="/static/sounds/red.mp3" preload="auto"></audio>
+    <audio id="sound-ambience" src="/static/sounds/ambience.mp3" preload="auto"></audio>
+    <audio id="sound-begin" src="/static/sounds/begin.mp3" preload="auto"></audio>
+</body>
+</html>

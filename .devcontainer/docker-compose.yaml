@@ -1,0 +1,17 @@
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    container_name: nerdland_2025_signature_gui
+    ports:
+      - "5000:5000"  # Exposing backend port
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1  # Ensures Python logs are shown in real time
+    volumes:
+      - ../backend:/home/nerdland  # Maps backend code
+    command: python3 main.py  # Starts the backend
+
+volumes:
+  backend:

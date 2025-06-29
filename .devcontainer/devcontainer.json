@@ -1,0 +1,21 @@
+{
+    "name": "Accu",
+    "dockerFile": "Dockerfile",
+    "context": "..",
+    "appPort": [
+        "5000:5000",
+        "3000:3000"
+    ],
+    "extensions": [
+        "ms-python.python", // Python extension
+    ],
+    "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
+    "settings": {
+        "python.pythonPath": "/usr/local/bin/python"
+    },
+    "remoteUser": "Accu",
+    "workspaceFolder": "/home/accu",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/home/accu,type=bind,consistency=cached"
+    ]
+}
